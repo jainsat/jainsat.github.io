@@ -3,43 +3,48 @@
     <head>
         <title>Satya Jain</title>
         <style type="text/css">
-        @keyframes l2r {
-            0%   {margin-left: 0%;margin-top: 0% }
-            100% {margin-left: 10%;margin-top: 10%; }
-        }
-        @keyframes r2l {
-            0%   {margin-right: 0%;margin-top: 0% }
-            100% {margin-top: 10%;margin-right: 10%;}
-        }
+            @keyframes l2r {
+                0%   {left: 0%;top: 0%; font-size: 1em}
+                100% {left: 10%;top: 30%; font-size: 6em;}
+            }
+            @keyframes r2l {
+                0%   {right: 0%;top: 0%; font-size: 1em;}
+                100% {top: 30%;right: 10%; font-size: 6em;}
+            }
 
-	    .wel1 {
-		    animation-name: l2r;
-		    animation-duration: 4s;
-            transition-timing-function: ease-out;
-		    animation-fill-mode: forwards;
-		    float: left;
-	   	    width: 38%;
-		    text-align: right;
-		    font-size: 6em;	
-	    }
-	    .wel2 {
-		    animation-name: r2l;
-		    animation-duration: 4s;
-		    transition-timing-function: ease-out;
-		    animation-fill-mode: forwards;
-		    float: right;
-		    width: 42%;
-		    text-align: left;
-		    font-size: 6em;
-	    }
+	        .wel1 {
+    		    animation: l2r 4s ease-out;
+		        animation-fill-mode: forwards;
+		        float: left;
+	   	        width: 38%;
+		        text-align: right;
+		        position: fixed;
+		        font-size: 6em;
+	        }
+	        .wel2 {
+		        animation: r2l 4s ease-out;
+		        animation-fill-mode: forwards;
+		        float: right;
+		        width: 42%;
+		        text-align: left;
+		        font-size: 6em;
+                position: fixed;		        
+	        }
+	        a {
+	            text-decoration: none;
+	            color: black;
+	        }
+	        body {
+	        	position:relative;
+	        }
         </style>
     </head>
     <body>
         <div class="wel1">
-            <p>WELC</p>
+            <a href="main.html">WELC</a>
         </div>
         <div class="wel2">
-           <p>OME();</p>
+           <a href="main.html">OME();</a>
         </div>
     </body>
 </html>
