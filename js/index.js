@@ -7,11 +7,11 @@ $(document).ready( function() {
 	    var canvas = document.querySelector("canvas");
         var cxt = canvas.getContext("2d");
         cxt.clearRect(0, 0, canvas.width, canvas.height);
-        cxt.font = "80px Tangerine";
+        cxt.font = "40px Tangerine";
         cxt.fillStyle ="#ffffff";
         cxt.strokeStyle ="#ffffff";
-        cxt.lineWidth=1;	
-        var dashLenMax = 80,offset=3,x=30, y=90,text="Satya Jain",i=0, dashLen=0, dashSpace=dashLenMax;
+        cxt.lineWidth=1;
+        var dashLenMax = 100,offset=8,sx=90,x=sx, y=80,text="Satya Jain",i=0, dashLen=0, dashSpace=dashLenMax;
         // Text will appear to animate if we draw it char by char and while
         // drawing a character, we first want to keep 0 dash length and max dash space.
         // Then by recursion, we keep increasing dash length and reduce dash space by
@@ -28,7 +28,10 @@ $(document).ready( function() {
         	    requestAnimationFrame(draw);
             }
            else {
-               cxt.fillText(text[i], x, y);
+                cxt.clearRect(0,0,canvas.width,canvas.height);
+                cxt.fillText(text.substring(0,i+1), sx, y);
+
+
                x+=cxt.measureText(text[i]).width + cxt.lineWidth;
                i++;
                dashLen = 0;
@@ -45,11 +48,11 @@ $(document).ready( function() {
         document.fonts.add(font);
 	    var canvas = document.querySelector("canvas");
         var cxt = canvas.getContext("2d");
-        cxt.font = "80px Tangerine";
+        cxt.font = "40px Tangerine";
         cxt.fillStyle ="#ffffff";
         cxt.strokeStyle ="#ffffff";
         cxt.lineWidth=3;
-        cxt.fillText("Welcome",60, 90);
+        cxt.fillText("Welcome",100, 80);
         setTimeout(showName, 2500);
     });
  
