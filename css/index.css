@@ -5,7 +5,7 @@ body {
 
 @font-face {
     font-family: myFirstFont;
-    src: url(../fonts/RugeBoogie-Regular.ttf);
+    src: url(../fonts/Tangerine.ttf);
 }
 
 .container {
@@ -14,7 +14,7 @@ body {
     width: 50%;
     height: 400px;
     position: relative;
-    /*border: 1px solid blue; */
+  /*  border: 1px solid blue;*/
     color: white;
     font-size: 10vw;
     font-family: myFirstFont;
@@ -31,9 +31,10 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-   /*border: 1px solid red;*/
+  /*  border: 1px solid red;*/
     text-align: center;
-    line-height: 8vw;
+    width: 100%;
+    /*line-height: 8vw;
 
    /*osition: absolute;
     top: 50%;

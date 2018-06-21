@@ -4,38 +4,53 @@ $(document).ready( function() {
     c.css("top", h + "px");
     $(".navbar").css("top", h + 10 + "px");
 	function showName() {
-	    $(".center").text("Satya Jain");
+	    var canvas = document.querySelector("canvas");
+        var cxt = canvas.getContext("2d");
+        cxt.clearRect(0, 0, canvas.width, canvas.height);
+        cxt.font = "80px Tangerine";
+        cxt.fillStyle ="#ffffff";
+        cxt.strokeStyle ="#ffffff";
+        cxt.lineWidth=1;	
+        var dashLenMax = 80,offset=3,x=30, y=90,text="Satya Jain",i=0, dashLen=0, dashSpace=dashLenMax;
+        // Text will appear to animate if we draw it char by char and while
+        // drawing a character, we first want to keep 0 dash length and max dash space.
+        // Then by recursion, we keep increasing dash length and reduce dash space by
+        // same factor. For. e.g. suppose max dash length is 300.
+        // In the beginning, (dash len, dash space) will be (0, 300) then depending on
+        // how fast we want our text to draw, we can decide some offset, say 10. So in
+        // next turn, (len, space) will become (10,290) => (20,280)=>(30,270)......(300,0).
+        function draw() {
+            cxt.setLineDash([dashLen, dashSpace]); // create a long dash mask
+            dashLen += offset;    // increase dash length.
+            dashSpace -= offset;  // reduce dash space.
+            cxt.strokeText(text[i], x, y);   // stroke letter.
+            if (dashSpace >= 0) {
+        	    requestAnimationFrame(draw);
+            }
+           else {
+               cxt.fillText(text[i], x, y);
+               x+=cxt.measureText(text[i]).width + cxt.lineWidth;
+               i++;
+               dashLen = 0;
+               dashSpace = dashLenMax;
+               if (i<text.length) {
+	                requestAnimationFrame(draw);
+               }  	
+            }
+        }
+        draw();
     }
-    setTimeout(showName, 2000);
- /* var canvas = document.getElementsByClassName("center")[0];
-  var ctx=canvas.getContext("2d");
-
-
-ctx.fillStyle="#ffffff";
-ctx.textAlign="center";
-ctx.fillText("Satya Jain", canvas.width/2, canvas.height/2);
-/*ctx.lineWidth = 5; ctx.lineJoin = "round"; ctx.globalAlpha = 2/3;
-ctx.strokeStyle = ctx.fillStyle = "#1f2f90";
-    (function loop() {
-	     // use setTimeout() to execute
-   
-
-  ctx.clearRect(x, 0, 60, 150);
-  ctx.setLineDash([dashLen - dashOffset, dashOffset - speed]); // create a long dash mask
-  dashOffset -= speed;                                         // reduce dash length
-  ctx.strokeText(txt[i], x, 90);                               // stroke letter
-
-  if (dashOffset > 0) requestAnimationFrame(loop);             // animate
-  else {
-    ctx.fillText(txt[i], x, 90);                               // fill final letter
-    dashOffset = dashLen;                                      // prep next char
-    x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
-    ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());        // random y-delta
-    ctx.rotate(Math.random() * 0.005);                         // random rotation
-    if (i < txt.length) requestAnimationFrame(loop);
-  }
-
-  })();*/
-
+    const myFont = new FontFace('Tangerine', 'url(fonts/Tangerine.ttf)');
+    myFont.load().then((font) => {
+        document.fonts.add(font);
+	    var canvas = document.querySelector("canvas");
+        var cxt = canvas.getContext("2d");
+        cxt.font = "80px Tangerine";
+        cxt.fillStyle ="#ffffff";
+        cxt.strokeStyle ="#ffffff";
+        cxt.lineWidth=3;
+        cxt.fillText("Welcome",60, 90);
+        setTimeout(showName, 2500);
+    });
  
  });
