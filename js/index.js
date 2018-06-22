@@ -1,10 +1,11 @@
 $(document).ready( function() {
-    var c = $(".container");
+    /*var c = $(".container");
     var h = ($(window).height() - c.height())/2;
     c.css("top", h + "px");
-    $(".navbar").css("top", h + 10 + "px");
+    $(".navbar").css("top", h + 10 + "px");*/
 	function showName() {
-	    var canvas = document.querySelector("canvas");
+		$(".center").text("Satya Jain");
+/*	    var canvas = document.querySelector("canvas");
         var cxt = canvas.getContext("2d");
         cxt.clearRect(0, 0, canvas.width, canvas.height);
         cxt.font = "40px Tangerine";
@@ -45,15 +46,15 @@ $(document).ready( function() {
     }
     const myFont = new FontFace('Tangerine', 'url(fonts/Tangerine.ttf)');
     myFont.load().then((font) => {
-        document.fonts.add(font);
+       /* document.fonts.add(font);
 	    var canvas = document.querySelector("canvas");
         var cxt = canvas.getContext("2d");
         cxt.font = "40px Tangerine";
         cxt.fillStyle ="#ffffff";
         cxt.strokeStyle ="#ffffff";
         cxt.lineWidth=3;
-        cxt.fillText("Welcome",100, 80);
-        setTimeout(showName, 2500);
-    });
- 
+        cxt.fillText("Welcome",100, 80);*/
+     
+    }
+    setTimeout(showName, 2500);
  });
