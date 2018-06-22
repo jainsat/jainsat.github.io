@@ -68,7 +68,7 @@ html, body {
 	height: 100%;
    /* border: 1px solid red;*/
     transition: transform 4s ease;
-    -webkit-transition: transform 4s ease;
+    -webkit-transition: -webkit-transform 4s ease;
 }
  
  img:hover {
