@@ -3,8 +3,11 @@ $(document).ready( function() {
     var h = ($(window).height() - c.height())/2;
     c.css("top", h + "px");
     $(".navbar").css("top", h + 10 + "px");*/
+    $(".hexagon").animate({bottom: '-10%', width: '10px'},2000);
 	function showName() {
 		$(".center").text("Satya Jain");
+        $(".hexagon").css({display:"none"});
+        $(".navbar").css({display:"flex"});
 /*	    var canvas = document.querySelector("canvas");
         var cxt = canvas.getContext("2d");
         cxt.clearRect(0, 0, canvas.width, canvas.height);
