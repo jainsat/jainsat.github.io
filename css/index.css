@@ -4,6 +4,7 @@ html, body {
    /* border: 1px solid yellow;*/
     padding: 0px;
     margin: 0px;
+    color: #ff3300;
 
 }
 
@@ -38,7 +39,6 @@ html, body {
 
  @media only screen and (max-width: 500px) {
     .hexagon {
-        position: absolute;
        /* border: 1px solid red;*/
         width: 30px;
     }
@@ -80,17 +80,30 @@ html, body {
     transform: translateY(-50%);
 }
 
-span {
-	padding: 10px;
+li:before {
+  content: "/";
+  padding: 0px 10px 0px 10px;
+
+}
+
+li:first-child:before {
+  content: "";
+}
+
+li {
+    color: inherit;
+    list-style-type: none;
+    /*border: 1px solid yellow;*/
 }
 
 .navigation {
 	text-decoration: none;
-	color: #ff3300;
+	color: inherit;
 	font-size: 18px;
 	font-weight: 700;
     font-family: Verdana, sans-serif;
 	padding-bottom: 5px;
+   /* border: 1px solid blue;*/
 }
 
 .navigation:hover {
