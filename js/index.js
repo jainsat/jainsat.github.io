@@ -3,11 +3,12 @@ $(document).ready( function() {
     setTimeout(showName, 2500);
     setTimeout(runHexagon,2000);
     var leaf_width = $(".leaf").width();
-    $(".active-section-1").css({width: leaf_width*0.7});
-    $(".active-section-2").css({width: leaf_width*0.9});
-    $(".active-section-3").css({width: leaf_width*0.5});
-    $(".active-section-4").css({width: leaf_width*0.1});
-    $(".active-sections").mouseover(rotateLeaf, null);
+    var leaf_container_width = $(".img-helper").width();
+    $(".active-section-1").css({width: leaf_width*0.7, left: leaf_container_width/2 - leaf_width*0.7/2});
+    $(".active-section-2").css({width: leaf_width*0.9, left: leaf_container_width/2 - leaf_width*0.9/2});
+    $(".active-section-3").css({width: leaf_width*0.5, left: leaf_container_width/2 - leaf_width*0.5/2});
+    $(".active-section-4").css({width: leaf_width*0.1, left: leaf_container_width/2 - leaf_width*0.1/2});
+    $(".active-sections").hover(function() {rotateLeaf(-45);}, function() {rotateLeaf(0);});
 
     function runHexagon()
     {
@@ -19,9 +20,9 @@ $(document).ready( function() {
         $(".hexagon").css({display:"none"});
         $(".navbar").css({display:"flex"});
     }
-    function rotateLeaf()
+    function rotateLeaf(angle)
     {
-        $(".leaf").css({transform: "rotate(-45deg)"});
+        $(".leaf").css({transform: "rotate("+ angle + "deg)"});
     } 
 
 
