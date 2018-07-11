@@ -94,3 +94,50 @@ span {
     text-align: center;
     display: inline-block;
 }
+
+@media screen and (max-width: 900px) {
+    .timeline ul li div , span{
+        width: 250px;
+    }
+    .timeline ul li:nth-child(even) div {
+        left: -375px; /*250+45-6*/
+    }
+    img {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .timeline ul li {
+        margin-left: 20px;
+    }
+
+    .timeline ul li div, span{
+        width: calc(100vw - 91px);
+    }
+
+    .timeline ul li:nth-child(odd) div {
+        left: 45px;
+    }
+
+    .timeline ul li:nth-child(odd) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #fffff5 transparent transparent;
+
+    }
+    .timeline ul li:nth-child(even) div {
+        left: 45px;
+
+    }
+
+    .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #fffff5 transparent transparent;
+    }
+    img {
+        width: 80px;
+    }
+
+}
