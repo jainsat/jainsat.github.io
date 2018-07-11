@@ -100,7 +100,7 @@ span {
         width: 250px;
     }
     .timeline ul li:nth-child(even) div {
-        left: -375px; /*250+45-6*/
+        left: -325px; /*250+45-6*/
     }
     img {
         width: 80px;
