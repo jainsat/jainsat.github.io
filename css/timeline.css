@@ -117,12 +117,8 @@ span {
         height: 40px;
     }
 
-    .timeline ul li div{
-        width: calc(90vw - 91px);
-    }
-
-    span {
-        width: calc(100vw - 91px);
+    .timeline ul li div, span{
+        width: calc(90vw - 85px);
     }
 
 
