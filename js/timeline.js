@@ -10,6 +10,7 @@ $(document).ready(function() {
           for (var i = 0; i < items.length; i++) {
               if (isElementInViewport(items[i])) {
                   items[i].classList.add("in-view");
+                  //alert("in view " + i);
                   var item_height = items[i].firstElementChild.clientHeight;
                   // Min distance between li elements = 200px
                   if (item_height < 200) {
@@ -22,12 +23,22 @@ $(document).ready(function() {
       }
 
     function isElementInViewport(el) {
-        var rect = el.getBoundingClientRect();
+        var top = el.offsetTop;
+        var left = el.offsetLeft;
+        var width = el.offsetWidth;
+        var height = el.offsetHeight;
+
+        while(el.offsetParent) {
+            el = el.offsetParent;
+            top += el.offsetTop;
+            left += el.offsetLeft;
+        }
+
         return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            top < (window.pageYOffset + window.innerHeight) &&
+            left < (window.pageXOffset + window.innerWidth) &&
+            (top + height) > window.pageYOffset &&
+            (left + width) > window.pageXOffset
         );
     }
 
