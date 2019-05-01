@@ -1,0 +1,147 @@
+html, body {
+    background-color: #282525;
+    height: 100%;
+   /* border: 1px solid yellow;*/
+    padding: 0px;
+    margin: 0px;
+    color: red;
+
+}
+
+@font-face {
+    font-family: Tangerine;
+    src: url(../fonts/Tangerine.ttf);
+}
+
+.container {
+
+    width: 100%;
+    height: 90%;
+    /*border: 1px solid blue;*/
+    color: white;
+    font-family: Tangerine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+ .hexagon {
+    position: absolute;
+    /*border: 1px solid red;*/
+    width: 40px;
+    display: block;
+    left: 50%;
+    bottom: 25%;
+    transform: translateX(-50%);
+
+ }
+
+ @media only screen and (max-width: 500px) {
+    .hexagon {
+       /* border: 1px solid red;*/
+        width: 30px;
+    }
+}
+
+.img-helper {
+    width: 100%;
+    height: 80%;
+  /*  border: 3px solid white;*/
+    position: relative;
+    text-align: center;
+
+}
+
+.leaf {	
+	height: 100%;
+   /* border: 1px solid red;*/
+    transition: transform 4s ease;
+    z-index: -1;
+}
+ 
+.center {
+    /*border: 1px solid green;*/
+    position:absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    letter-spacing: 5px;
+    text-align: center;
+    padding: 0px;
+    font-size: 80px;
+    transform: translateY(-50%);
+}
+
+/*.active-sections:hover {
+     transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);     
+    -webkit-transform: rotate(-45deg); 
+}*/
+
+.active-sections {
+  /*  border: 1px solid yellow;*/
+    position: absolute;
+    display:inline;
+    z-index: 1;
+    webkit-transition: -webkit-transform 4s ease;
+}
+.active-section-1 {
+    top: 20%;
+    height: 20%;
+}
+
+.active-section-2 {
+    top: 40%;
+    height: 20%;
+}
+.active-section-3 {
+    top: 60%;
+    height: 20%;
+}
+.active-section-4 {
+    top: 80%;
+    height: 15%;
+}
+
+li:before {
+  content: "/";
+  padding: 0px 10px 0px 10px;
+}
+
+li:first-child:before {
+  content: "";
+}
+
+li {
+    color: inherit;
+    list-style-type: none;
+    font-weight: 700;
+    /*border: 1px solid yellow;*/
+}
+
+.navigation {
+	text-decoration: none;
+	color: inherit;
+	font-size: 18px;
+	font-weight: inherit;
+    font-family: Verdana, sans-serif;
+	padding-bottom: 5px;
+   /* border: 1px solid blue;*/
+}
+
+.navigation:hover {
+	border-bottom: 3px solid white;
+}
+
+.navbar {
+    width: 100%;
+    height: 10%;
+  /* border: 1px solid green;*/
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    display: none;
+}
+
